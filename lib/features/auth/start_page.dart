@@ -16,7 +16,7 @@ class StartPage extends StatelessWidget {
           children: <Widget>[
             Image.asset('assets/logo.png', height: 100, width: 100),
             Text(
-              'HermGen',
+              'Hermes',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleLarge,
             ),
@@ -36,7 +36,6 @@ class StartPage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => CreateAccountPage()),
                 );
               },
-
               style: FilledButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
@@ -47,6 +46,7 @@ class StartPage extends StatelessWidget {
               ),
               child: Text("Let's get started"),
             ),
+            SizedBox(height: 18),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -55,12 +55,16 @@ class StartPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
                 IconButton(
+                  color: Theme.of(context).colorScheme.onPrimary,
                   onPressed: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   },
                   icon: Icon(Icons.arrow_forward),
+                  style: IconButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                  ),
                 ),
               ],
             ),
